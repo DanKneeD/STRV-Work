@@ -1,0 +1,43 @@
+class Buttons extends React.Component{
+  
+  constructor(props){
+    super(props);
+    this.state = {value:0};
+
+
+  }
+  
+  
+  changeNum = (val) => {
+    this.setState(prevState => ({
+      value: prevState.value + val
+    }));
+    
+  }
+  
+  render(){
+
+    return( 
+      <div>
+      <button onClick={this.changeNum.bind(this,1) }>               
+        +
+      </button>
+      <button onClick={this.changeNum.bind(this,-1)}>           
+        -
+      </button>
+
+        <div>
+          {this.state.value}
+        </div>
+       </div>
+     
+    );
+    
+  }
+ 
+  
+}
+
+ReactDOM.render(
+<Buttons/>,document.getElementById('root')
+);
